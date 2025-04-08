@@ -15,10 +15,26 @@ public class DynamicStringListTest
     testList.add("is");
     testList.add("a");
     testList.add("test");
-    // act
+ 
     String actual =  testList.get(2);
-    //assert
+
     assertEquals("a", actual);
+  }
+
+
+  @Test
+  void testGetOutOfBoundsIndex() 
+  {
+  
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+   
+    assertThrows(IndexOutOfBoundsException.class, () -> {
+      testList.get(18);
+    });
   }
 
 
