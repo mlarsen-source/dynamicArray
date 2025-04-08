@@ -67,7 +67,9 @@ public class DynamicStringList implements StringList
    */
   public void add(String value)
   {
-
+    resizeIfNeeded();
+    data[size] = value;
+    size++;
   }
 
   /**
