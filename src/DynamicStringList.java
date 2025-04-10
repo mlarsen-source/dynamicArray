@@ -83,6 +83,17 @@ public class DynamicStringList implements StringList
    */
   public String remove(int index)
   {
+    checkInBounds(index);
+    String remove = data[index];
+    
+
+    for(int i = index; i < data.length -1; i++) 
+    {
+        data[i] = data[i+1];  
+    }
+      
+    size--; //decrementing size
+    return remove;
 
   }
 
