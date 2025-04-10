@@ -1,15 +1,15 @@
 public class DynamicStringList implements StringList
 {
 
+  // fields
   private int size;
   private String[] data;
-
 
   // constructor
   public DynamicStringList()
   {
-      this.size = 0;
-      this.data = new String [10];
+    this.size = 0;
+    this.data = new String [10];
   }
 
   // helper method to resize the array if needed
@@ -22,7 +22,7 @@ public class DynamicStringList implements StringList
       {
         newArray[i] = data[i];
       }
-    data = newArray;
+      data = newArray;
     }
   }
 
@@ -60,7 +60,6 @@ public class DynamicStringList implements StringList
   {
     checkInBounds(index);
     data[index] = value;
-
   }
 
   /**
@@ -108,5 +107,3 @@ public class DynamicStringList implements StringList
     return data.length;
   }
 }
-
-
