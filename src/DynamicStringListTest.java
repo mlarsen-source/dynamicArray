@@ -105,6 +105,33 @@ public class DynamicStringListTest
     assertEquals("and", actual);
   }
 
+  @Test
+  void testRemoveInBounds()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+   
+    String actual =  testList.remove(3);
+
+    assertEquals("test", actual);
+  }
+
+  @Test
+  void testRemoveOutOfBounds() 
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+   
+    assertThrows(IndexOutOfBoundsException.class, () -> {
+      testList.remove(18);
+    });
+  }
 
 
 }
