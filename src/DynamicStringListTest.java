@@ -133,6 +133,22 @@ public class DynamicStringListTest
     });
   }
 
+  @Test
+  void testSize() 
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+ 
+    int actual =  testList.size();
+
+    assertEquals(4, actual);
+  }
+
+  
+
 
 }
 
