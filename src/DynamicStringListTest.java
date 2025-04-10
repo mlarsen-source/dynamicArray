@@ -66,6 +66,44 @@ public class DynamicStringListTest
     });
   }
 
+  // tests for add method
+  
+  @Test
+  void testAddNoResize()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+   
+    String actual =  testList.get(3);
+
+    assertEquals("test", actual);
+  }
+
+  @Test
+  void testAddYesResize()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+    testList.add("of");
+    testList.add("our");
+    testList.add("Dynamic");
+    testList.add("String");
+    testList.add("List");
+    testList.add("for");
+    testList.add("practice");
+    testList.add("and");
+    testList.add("learning");
+   
+    String actual =  testList.get(11);
+
+    assertEquals("and", actual);
+  }
 
 
 
