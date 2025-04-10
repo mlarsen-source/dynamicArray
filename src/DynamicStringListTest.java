@@ -133,6 +133,7 @@ public class DynamicStringListTest
     });
   }
 
+// tests for size method
   @Test
   void testSize() 
   {
@@ -146,6 +147,41 @@ public class DynamicStringListTest
 
     assertEquals(4, actual);
   }
+
+  @Test
+  void testSizeEmpty() 
+  {
+    DynamicStringList testList = new DynamicStringList();
+    
+    int actual =  testList.size();
+
+    assertEquals(0, actual);
+  }
+
+  @Test
+  void testSizeAfterAddAndRemove() 
+  {
+    DynamicStringList testList = new DynamicStringList();
+    
+    testList.add("This");
+    
+    int initialSize = testList.size();
+
+    testList.add("is");
+    testList.add("a");
+        
+    int addedSize =  testList.size();
+
+    testList.remove(1);
+
+    int removedSize =  testList.size();
+    
+    assertEquals(1, initialSize);
+    assertEquals(3, addedSize);
+    assertEquals(2, removedSize);
+
+  }
+
 
   // tests for capacity method
   @Test
