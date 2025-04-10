@@ -147,6 +147,74 @@ public class DynamicStringListTest
     assertEquals(4, actual);
   }
 
+  // tests for capacity method
+  @Test
+  void testCapacityNoResize()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+ 
+    int actual =  testList.capacity();
+ 
+    assertEquals(10, actual);
+  }
+ 
+  @Test
+  void testCapacityResize()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+    testList.add("of");
+    testList.add("our");
+    testList.add("Dynamic");
+    testList.add("String");
+    testList.add("List");
+    testList.add("for");
+    testList.add("practice");
+    testList.add("and");
+    testList.add("learning");
+  
+    int actual =  testList.capacity();
+ 
+    assertEquals(20, actual);
+  }
+  @Test
+  void testCapacityResizeAgain()
+  {
+    DynamicStringList testList = new DynamicStringList();
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+    testList.add("of");
+    testList.add("our");
+    testList.add("Dynamic");
+    testList.add("String");
+    testList.add("List");
+    testList.add("for");
+    testList.add("practice");
+    testList.add("and");
+    testList.add("learning");
+    testList.add("This");
+    testList.add("is");
+    testList.add("a");
+    testList.add("test");
+    testList.add("of");
+    testList.add("our");
+    testList.add("Dynamic");
+    testList.add("String");
+    testList.add("List");
+  
+    int actual =  testList.capacity();
+ 
+    assertEquals(40, actual);
+  }
   
 
 
